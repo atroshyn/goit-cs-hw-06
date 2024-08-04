@@ -32,7 +32,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
     
     def do_POST(self):
-        if self.path == "/submit":
+        if self.path == "/message":
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
             data = parse_qs(post_data.decode('utf-8'))
